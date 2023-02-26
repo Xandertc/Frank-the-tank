@@ -1,0 +1,80 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Node.js Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm test
+
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_ curl -i -X GET "https://graph.facebook.com/LATEST-API-  VERSION/CONVERSATION-ID
+    ?fields=
+{
+  "messages": {
+    "data": [
+      {
+        "id": "Message ID-1",      
+        "created_time": "UNIX-TIMESTAMP-MOST-RECENT-MESSAGE"  
+      },
+      {
+        "id": "Message ID-2",
+        "created_time": "UNIX-TIMESTAMP"
+      },
+      {
+        "id": "Message ID-3",
+        "created_time": "UNIX-TIMESTAMP"
+      },
+...
+    ]
+  },
+  "id": "Conversation ID", 
+}
+Get
+
+curl -i -X GET "https://graph.facebook.com/LATEST-API-VERSION/MESSAGE-ID
+    ?fields=id,created_time,from,to,message
+    &access_token=PAGE-ACCESS-TOKEN"
+{
+  "timezone": "America/new New_York",
+  "locale": "en_US",
+  "coords": {
+    "lat": 37.47104,
+    "long": -122.14703
+  }
+}
+
+Example request
+
+
+
+
+
+ 
+  $ curl -XGET 'https://api.wit.ai/message?v=20230215&q=chicago&context=%7B%22timezone%22%3A%22America%2FLos_Angeles%22%2C%22locale%22%3A%22en_CA%22%2C%22coords%22%3A%7B%22lat%22%3A37.47104%2C%22long%22%3A-122.14703%7D%7D' \
+    -H "Authorization: Bearer $TOKEN"
